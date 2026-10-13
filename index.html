@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather Dashboard</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⛅</text></svg>">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Weather Dashboard</h1>
+    <p class="subtitle">Search for a city to see the current weather</p>
+
+    <form id="search-form">
+      <input type="text" id="city-input" placeholder="Enter a city name, e.g. London" autocomplete="off">
+      <button type="submit" id="search-btn">Search</button>
+    </form>
+
+    <!-- loading spinner (hidden until a search starts) -->
+    <div id="loading" class="hidden">
+      <div class="spinner"></div>
+      <p>Getting weather data...</p>
+    </div>
+
+    <!-- error message -->
+    <div id="error" class="hidden"></div>
+
+    <!-- results card, filled in by script.js -->
+    <div id="weather-card" class="hidden">
+      <h2 id="city-name"></h2>
+      <p id="date"></p>
+
+      <div class="main-info">
+        <img id="weather-icon" src="" alt="">
+        <div>
+          <p id="temp"></p>
+          <p id="description"></p>
+        </div>
+      </div>
+
+      <div class="details">
+        <div class="detail">
+          <span class="label">Feels like</span>
+          <span id="feels-like"></span>
+        </div>
+        <div class="detail">
+          <span class="label">Humidity</span>
+          <span id="humidity"></span>
+        </div>
+        <div class="detail">
+          <span class="label">Wind</span>
+          <span id="wind"></span>
+        </div>
+        <div class="detail">
+          <span class="label">Pressure</span>
+          <span id="pressure"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>Data from OpenWeatherMap</footer>
+
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
